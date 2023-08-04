@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: shell commands
+
+on: push
+
+jobs: 
+    run-shell-command: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo a string
+              run: echo "Hello World"
+            - name: multi line script
+              run: |
+                node -v
+                npm -v
+
