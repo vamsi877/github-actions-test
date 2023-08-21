@@ -1,7 +1,10 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: shell commands
 
-on: pull_request
+on: 
+  pull_request:
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs: 
     run-shell-command: 
