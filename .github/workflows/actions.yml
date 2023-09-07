@@ -20,7 +20,8 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-          echo "#${{github.token}}"
+          echo "${{github.token}}"
+          echo "client_payload from dispatch event : ${{github.event.client_payload.passed}}"
       - name: Checkout
         uses: actions/checkout@v3
       - name: list files after checkout
