@@ -26,6 +26,5 @@ jobs:
           echo ${{ true || (false && true) }}
       - name: Dump Contexts
         run: |
-          echo "${{toJson(github)}}"
           echo "${{toJson(job)}}"
           echo "${{toJson(secrets)}}"
