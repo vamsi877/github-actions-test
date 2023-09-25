@@ -11,7 +11,7 @@ jobs:
       - name: Runs on Failure
         if: failure()
         run: echo 'Runs only on failure'
-      - nane: Runs on Success
+      - name: Runs on Success
         # This is not needed (DEFAULT BEHAVIOUR)
         if: success()
         run: echo "Runs only on Success"
