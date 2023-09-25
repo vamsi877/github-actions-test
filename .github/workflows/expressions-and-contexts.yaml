@@ -24,10 +24,3 @@ jobs:
           echo ${{ 'string' == 'String' }}
           echo ${{ true && false }}
           echo ${{ true || (false && true) }}
-      - name: Dump Contexts
-        run: |
-          echo "${{toJson(github)}}"
-          echo "${{toJson(job)}}"
-          echo "${{toJson(secrets)}}"
-          echo "${{toJson(steps)}}"
-          echo "${{toJson(runner)}}"
