@@ -28,4 +28,4 @@ jobs:
         run: |
           echo "${{toJson(job)}}"
           echo "${{toJson(secrets)}}"
-          echo "${{toJson(github)}}"
+          echo "${{github}}"
