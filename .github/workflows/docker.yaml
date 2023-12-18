@@ -18,6 +18,6 @@ jobs:
       - name: Log node & OS version
         run: |
           node -v
-          cat /etc/os-releases
+          cat /etc/os-release
       - name: Log env
         run: echo $API_URL
