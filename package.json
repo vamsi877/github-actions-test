@@ -13,5 +13,8 @@
     "axios": "^1.6.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
