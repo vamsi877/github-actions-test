@@ -19,7 +19,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: krishnaa877/simple-node-api
-          tags: 
+          tags: |
             type=semver, pattern={{major}}.{{minor}}.{{patch}}
             type=semver, pattern={{major}}.{{minor}}
       - name: Build and Publish docker image
