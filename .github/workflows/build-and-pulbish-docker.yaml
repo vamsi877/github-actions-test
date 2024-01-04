@@ -18,7 +18,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: krishnaa877/sample-flask-webapp
+          images: krishnaa877/simple-node-api
           tags: 
             type=semver, pattern={{version}}
             type=semver, pattern={{major}}.{{minor}}
@@ -27,6 +27,8 @@ jobs:
         with:
           push: true
           tags: ${{ steps.meta.outputs.tags}}
+          labels: ${{ steps.meta.outputs.labels}}
+
 
         
 
