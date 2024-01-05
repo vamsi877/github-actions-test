@@ -1,7 +1,7 @@
 name: Test Api
 on:
   workflow_run: 
-    workflows: [build-and-publish-docker]
+    workflows: [Build & Publish Docker Image]
     types:
       - completed
 
