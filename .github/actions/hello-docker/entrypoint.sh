@@ -1,5 +1,4 @@
 #!/bin/sh
-
 echo "::debug::Running entrypoint.sh"
 echo "Hello $1"
 echo "INPUT_WHO_TO_GREET: $INPUT_WHO_TO_GREET"
