@@ -1,0 +1,21 @@
+name: Custom Docker Action
+
+on:
+  push:
+  
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Simple Docker Action
+        id: greet
+        #uses: actions/hello-world-javascript-action@v1.1
+        uses: ./.github/actions/hello-docker
+        with: 
+          who_to_greet: Vamsi Krishna
+      - name: Log Greeting Time 
+        run: echo "${{steps.greet.outputs.time}}"
+      - name: Log ENV var
+        run: echo $HELLO_TIME
