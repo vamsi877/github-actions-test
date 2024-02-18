@@ -15,7 +15,7 @@ outputs:
 runs:
   using: "node16"
   main: index.js
-  pre: setup.js
+  pre: dist/setup.js
   pre-if: runner.os == 'linux'
   post: cleanup.js
   post-if: runner.os == 'linux'
