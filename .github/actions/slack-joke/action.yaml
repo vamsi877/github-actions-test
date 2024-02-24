@@ -30,7 +30,7 @@ runs:
         SLACK_USERNAME: ${{ inputs.slack_username }}
         SLACK_WEBHOOK: ${{inputs.slack_webhook}}
         SLACK_TITLE: "Here is a random joke from Github Actions workflow"
-        SLACK_MESSAGE: ${{ slack_username && format({0}{1} {2},'@',inputs.slack_username,
+        SLACK_MESSAGE: ${{ inputs.slack_username && format({0}{1} {2},'@',inputs.slack_username,
                      steps.get-random-joke.outputs.RANDOM_JOKE) || steps.get-random-joke.outputs.RANDOM_JOKE}}
         SLACK_COLOR: "#0000ff"
     - name: Generate the joke file
