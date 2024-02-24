@@ -50,5 +50,5 @@ jobs:
           SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
           SLACK_USERNAME: "vamsi877"
           SLACK_TITLE: "From Github Actions workflow"
-          SLACK_MESSAGE: "Actor : ${{github.actor}} Event : ${{github.event}}"
+          SLACK_MESSAGE: "Actor : ${{github.actor}} Event : ${{github.event_name}}"
           SLACK_COLOR: "#0000ff"
