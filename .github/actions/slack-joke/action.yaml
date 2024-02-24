@@ -43,6 +43,7 @@ runs:
       #if: inputs.upload_artifact
     - name: Upload the Artifact
       if: inputs.upload_artifact
+      run: echo ${{inputs.upload_artifact}}
       uses: actions/upload-artifact@v3
       with:
         name: random-joke
