@@ -13,6 +13,7 @@ runs:
   using: "composite"
   steps:
     - name: Generating random joke
+      shell: bash
       run: |
         random-joke=$(curl -H Accept: text/plain https://icanhazdadjoke.com/)
         echo "RANDOM_JOKE=$random-joke" >> GITHUB_OUTPUT
