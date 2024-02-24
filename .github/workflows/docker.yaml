@@ -46,7 +46,7 @@ jobs:
           args: "some string"
       - name: Send a Slack message
         uses: docker://technosophos/slack-notify
-        with:
+        env:
           SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
           SLACK_USERNAME: "vamsi877"
           SLACK_TITLE: "From Github Actions workflow"
