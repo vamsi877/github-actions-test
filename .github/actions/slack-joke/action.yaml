@@ -1,0 +1,34 @@
+name: Slack Joke
+author: Vamsi Krishna
+description: "Send a joke in Slack"
+inputs:
+  slack_webhook:
+    description: "webhook to the slack App the joke needs to posted"
+    required: true
+    # default: "World"
+outputs:
+  result:
+    description: result of the composite action
+runs:
+  using: "composite"
+  steps:
+    - name: Generating random joke
+      run: |
+        random-joke=$(curl -H Accept: text/plain https://icanhazdadjoke.com/)
+        echo "RANDOM_JOKE=$random-joke" >> GITHUB_OUTPUT
+        echo "$random-joke" >> random-joke.txt
+      id: get-random-joke
+
+    - name: Sending random joke to a Slack Channel
+      uses: docker://technosophos/slack-notify
+      env:
+        SLACK_WEBHOOK: ${{inputs.slack_webhook}}
+        SLACK_TITLE: "Here is a random joke from Github Actions workflow"
+        SLACK_MESSAGE: ${{steps.get-random-joke.outputs.RANDOM_JOKE}}
+        SLACK_COLOR: "#0000ff"
+   
+    - name: Upload the Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: random-joke
+        retention-days: 10

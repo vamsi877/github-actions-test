@@ -19,3 +19,9 @@ jobs:
         run: echo "${{steps.greet.outputs.time}}"
       - name: Log ENV var
         run: echo $HELLO_TIME
+      - name: Send a Joke via Slack
+        uses: ./.github/actions/slack-joke
+        with:
+          slack_webhook: ${{secrets.SLACK_WEBHOOK}}
+          
+
