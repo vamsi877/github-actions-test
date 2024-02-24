@@ -16,7 +16,7 @@ runs:
       shell: bash
       run: |
         response=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)
-        echo "RANDOM_JOKE=$response" >> GITHUB_OUTPUT
+        echo "RANDOM_JOKE=$response" >> $GITHUB_OUTPUT
         echo "$response" >> random-joke.txt
       id: get-random-joke
 
