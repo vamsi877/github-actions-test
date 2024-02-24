@@ -32,5 +32,5 @@ runs:
       uses: actions/upload-artifact@v3
       with:
         name: random-joke
-        path: random-joke
+        path: random-joke.txt
         retention-days: 10
