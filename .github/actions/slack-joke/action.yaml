@@ -21,7 +21,11 @@ runs:
     - name: Generating random joke
       shell: bash
       run: |
-        echo "RANDOM_JOKE=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)" >> $GITHUB_OUTPUT
+        DELIMITER="12345"
+        echo "RANDOM_JOKE<<$DELIMITER" >> $GITHUB_OUTPUT
+        curl -H "Accept: text/plain" https://icanhazdadjoke.com/) >> $GITHUB_OUTPUT
+        echo "" >> $GITHUB_OUTPUT
+        echo $DELIMITER >> $GITHUB_OUTPUT
       id: get-random-joke
 
     - name: Sending random joke to a Slack Channel
