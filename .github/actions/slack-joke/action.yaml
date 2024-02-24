@@ -40,7 +40,7 @@ runs:
     - name: Generate the joke file
       shell: bash
       run: echo ${{ steps.get-random-joke.outputs.RANDOM_JOKE }} >> random-joke.txt 
-      if: inputs.upload_artifact
+      #if: inputs.upload_artifact
     - name: Upload the Artifact
       if: inputs.upload_artifact
       uses: actions/upload-artifact@v3
