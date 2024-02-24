@@ -21,7 +21,13 @@ jobs:
         run: echo $HELLO_TIME
       - name: Send a Joke via Slack
         uses: ./.github/actions/slack-joke
+        id: generate-joke
         with:
+          slack_username: vamsi
+          upload_artifact: true
           slack_webhook: ${{secrets.SLACK_WEBHOOK}}
-          
+      - name: Print the Generated random joke
+        run: |
+          echo "Here is a random joke :"
+          echo ${{steps.generate-joke.outputs.joke}}
 
