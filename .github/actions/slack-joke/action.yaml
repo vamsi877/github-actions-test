@@ -17,7 +17,7 @@ runs:
       run: |
         response=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)
         echo "RANDOM_JOKE=$response" >> $GITHUB_OUTPUT
-        echo "$response" >> random-joke.txt
+        echo $response >> random-joke.txt
       id: get-random-joke
 
     - name: Sending random joke to a Slack Channel
