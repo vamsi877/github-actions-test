@@ -23,8 +23,8 @@ jobs:
         uses: ./.github/actions/slack-joke
         id: generate-joke
         with:
-          slack_username: vamsi
-          upload_artifact: true
+          slack_username: krishna
+          upload_artifact: false
           slack_webhook: ${{secrets.SLACK_WEBHOOK}}
       - name: Print the Generated random joke
         run: |
