@@ -9,7 +9,7 @@ inputs:
 outputs:
   time:
     description: The time of the greeting
-runs:
+runs: 
   using: "docker"
   # image: 'docker://node:18.16-alpine3.17'
   image: "Dockerfile"
