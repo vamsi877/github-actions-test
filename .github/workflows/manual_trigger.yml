@@ -11,7 +11,7 @@ on:
 
 jobs:
   log-info:
-    runs-on: ubuntu-latest
+    runs-on: my-runner
     steps:
       - run: |
              echo $GITHUB_REF
