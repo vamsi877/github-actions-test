@@ -16,4 +16,5 @@ jobs:
       - run: |
              echo $GITHUB_REF
              echo "String : ${{inputs.string}}"
+             sleep 60
 
